@@ -1,0 +1,84 @@
+# flyctl launch added from .gitignore
+**\.qodo
+
+# flyctl launch added from Backend\.gitignore
+Backend\**\.qodo
+
+# flyctl launch added from Backend\vendor\github.com\Masterminds\squirrel\.gitignore
+Backend\vendor\github.com\Masterminds\squirrel\**\squirrel.test
+
+# flyctl launch added from Backend\vendor\github.com\dgrijalva\jwt-go\.gitignore
+Backend\vendor\github.com\dgrijalva\jwt-go\**\.DS_Store
+Backend\vendor\github.com\dgrijalva\jwt-go\**\bin
+
+
+
+# flyctl launch added from Backend\vendor\github.com\gorilla\websocket\.gitignore
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+Backend\vendor\github.com\gorilla\websocket\**\*.o
+Backend\vendor\github.com\gorilla\websocket\**\*.a
+Backend\vendor\github.com\gorilla\websocket\**\*.so
+
+# Folders
+Backend\vendor\github.com\gorilla\websocket\**\_obj
+Backend\vendor\github.com\gorilla\websocket\**\_test
+
+# Architecture specific extensions/prefixes
+Backend\vendor\github.com\gorilla\websocket\**\*.[568vq]
+Backend\vendor\github.com\gorilla\websocket\**\[568vq].out
+
+Backend\vendor\github.com\gorilla\websocket\**\*.cgo1.go
+Backend\vendor\github.com\gorilla\websocket\**\*.cgo2.c
+Backend\vendor\github.com\gorilla\websocket\**\_cgo_defun.c
+Backend\vendor\github.com\gorilla\websocket\**\_cgo_gotypes.go
+Backend\vendor\github.com\gorilla\websocket\**\_cgo_export.*
+
+Backend\vendor\github.com\gorilla\websocket\**\_testmain.go
+
+Backend\vendor\github.com\gorilla\websocket\**\*.exe
+
+Backend\vendor\github.com\gorilla\websocket\**\.idea
+Backend\vendor\github.com\gorilla\websocket\**\*.iml
+
+# flyctl launch added from Backend\vendor\github.com\jmoiron\sqlx\.gitignore
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+Backend\vendor\github.com\jmoiron\sqlx\**\*.o
+Backend\vendor\github.com\jmoiron\sqlx\**\*.a
+Backend\vendor\github.com\jmoiron\sqlx\**\*.so
+
+# Folders
+Backend\vendor\github.com\jmoiron\sqlx\**\_obj
+Backend\vendor\github.com\jmoiron\sqlx\**\_test
+Backend\vendor\github.com\jmoiron\sqlx\**\.idea
+
+# Architecture specific extensions/prefixes
+Backend\vendor\github.com\jmoiron\sqlx\**\*.[568vq]
+Backend\vendor\github.com\jmoiron\sqlx\**\[568vq].out
+
+Backend\vendor\github.com\jmoiron\sqlx\**\*.cgo1.go
+Backend\vendor\github.com\jmoiron\sqlx\**\*.cgo2.c
+Backend\vendor\github.com\jmoiron\sqlx\**\_cgo_defun.c
+Backend\vendor\github.com\jmoiron\sqlx\**\_cgo_gotypes.go
+Backend\vendor\github.com\jmoiron\sqlx\**\_cgo_export.*
+
+Backend\vendor\github.com\jmoiron\sqlx\**\_testmain.go
+
+Backend\vendor\github.com\jmoiron\sqlx\**\*.exe
+Backend\vendor\github.com\jmoiron\sqlx\**\tags
+Backend\vendor\github.com\jmoiron\sqlx\**\environ
+
+# flyctl launch added from Backend\vendor\github.com\joho\godotenv\.gitignore
+Backend\vendor\github.com\joho\godotenv\**\.DS_Store
+
+# flyctl launch added from Backend\vendor\github.com\lann\builder\.gitignore
+Backend\vendor\github.com\lann\builder\**\*~
+Backend\vendor\github.com\lann\builder\**\#*#
+
+# flyctl launch added from Backend\vendor\github.com\lib\pq\.gitignore
+Backend\vendor\github.com\lib\pq\**\.db
+Backend\vendor\github.com\lib\pq\**\*.test
+Backend\vendor\github.com\lib\pq\**\*~
+Backend\vendor\github.com\lib\pq\**\*.swp
+Backend\vendor\github.com\lib\pq\**\.idea
+Backend\vendor\github.com\lib\pq\**\.vscode
+fly.toml

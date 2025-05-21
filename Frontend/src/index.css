@@ -1,0 +1,831 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-family: 'Noto Kufi Arabic', sans-serif;
+  
+  /* Theme Colors */
+  --theme-fajr-primary: #334f8e;
+  --theme-fajr-secondary: #7887bb;
+  --theme-fajr-accent: #a3a9d1;
+  --theme-fajr-text: #ffffff;
+  
+  --theme-sunrise-primary: #ff9d4a;
+  --theme-sunrise-secondary: #ffcd85;
+  --theme-sunrise-accent: #ffe0b5;
+  --theme-sunrise-text: #ffffff;
+  
+  --theme-dhuhr-primary: #39a8ff;
+  --theme-dhuhr-secondary: #71c4ff;
+  --theme-dhuhr-accent: #b0e0ff;
+  --theme-dhuhr-text: #ffffff;
+  
+  --theme-asr-primary: #f4a948;
+  --theme-asr-secondary: #f7c47d;
+  --theme-asr-accent: #fae0b8;
+  --theme-asr-text: #ffffff;
+  
+  --theme-maghrib-primary: #8e4bae;
+  --theme-maghrib-secondary: #be8ad9;
+  --theme-maghrib-accent: #d8b8ea;
+  --theme-maghrib-text: #ffffff;
+  
+  --theme-isha-primary: #1d2d5b;
+  --theme-isha-secondary: #435083;
+  --theme-isha-accent: #7380ad;
+  --theme-isha-text: #ffffff;
+}
+
+html, body {
+  font-family: var(--font-family);
+  height: 100%;
+  direction: rtl;
+  overflow-x: hidden;
+  transition: background-color 2s ease, color 1s ease;
+}
+
+#root {
+  height: 100%;
+  position: relative;
+}
+
+/* ===== THEME BACKGROUNDS ===== */
+  .theme-fajr {
+  background: linear-gradient(135deg, #001c40 0%, #0a3d91 100%);
+  color: white;
+  }
+  
+  .theme-sunrise {
+  background: linear-gradient(135deg, #ff7e00 0%, #f9d423 100%);
+  color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .theme-dhuhr {
+  background: linear-gradient(135deg, #1e90ff 0%, #00bfff 100%);
+  color: white;
+  }
+  
+  .theme-asr {
+  background: linear-gradient(135deg, #003300 0%, #e65c00 100%);
+  color: white;
+  }
+  
+  .theme-maghrib {
+  background: linear-gradient(135deg, #6a0dad 0%, #9370db 100%);
+  color: white;
+  }
+  
+  .theme-isha {
+  background: linear-gradient(135deg, #0c0c30 0%, #1e1e5a 100%);
+  color: white;
+}
+
+/* Enhanced Shimmer effects for progress bar */
+.shimmer-effect {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: shimmerEffect 2s infinite;
+  animation-timing-function: ease-in-out;
+  transform: translateX(-100%) skewX(-20deg);
+  will-change: transform;
+}
+
+.shimmer-effect-slow {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: shimmerEffect 3s infinite;
+  animation-timing-function: ease-in-out;
+  transform: translateX(-100%) skewX(-10deg);
+  will-change: transform;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+/* Add decorative elements */
+.theme-decoration {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transition: opacity 1.5s ease;
+}
+
+/* Islamic pattern backgrounds */
+.islamic-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.07;
+  z-index: -1;
+  mix-blend-mode: screen;
+  background-size: 80px 80px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.islamic-pattern-detailed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: -1;
+  background-size: 120px 120px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 60l21.21 21.22-21.21 21.21-21.22-21.21L60 60zm33.94 0l21.21 21.22-21.21 21.21-21.22-21.21L93.94 60zm-67.88 0l21.21 21.22-21.21 21.21-21.22-21.21L26.06 60zm33.94-33.94l21.21 21.22-21.21 21.21-21.22-21.21 21.22-21.22zm0-33.94l21.21 21.22-21.21 21.21-21.22-21.21 21.22-21.22zm33.94 33.94l21.21 21.22-21.21 21.21-21.22-21.21 21.22-21.22zm-67.88 0l21.21 21.22-21.21 21.21-21.22-21.21 21.22-21.22z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.islamic-star-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: -1;
+  background-size: 100px 100px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M61.5625 50L80.0781 68.5156L68.5156 80.0781L50 61.5625L31.4844 80.0781L19.9219 68.5156L38.4375 50L19.9219 31.4844L31.4844 19.9219L50 38.4375L68.5156 19.9219L80.0781 31.4844L61.5625 50Z' fill='%23ffffff' fill-opacity='0.4'/%3E%3C/svg%3E");
+}
+
+/* ===== PRAYER TIME DYNAMIC ELEMENTS ===== */
+
+/* Prayer time decorative elements */
+.theme-fajr .theme-decoration::before,
+.theme-fajr .theme-decoration::after,
+.theme-sunrise .theme-decoration::before,
+.theme-sunrise .theme-decoration::after,
+.theme-dhuhr .theme-decoration::before,
+.theme-dhuhr .theme-decoration::after,
+.theme-asr .theme-decoration::before,
+.theme-asr .theme-decoration::after,
+.theme-maghrib .theme-decoration::before,
+.theme-maghrib .theme-decoration::after,
+.theme-isha .theme-decoration::before,
+.theme-isha .theme-decoration::after {
+  content: '';
+  position: absolute;
+  opacity: 0.5;
+  pointer-events: none;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Fajr - Early Dawn */
+.theme-fajr .theme-decoration::before {
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+  background-size: 80px 80px, 60px 60px, 40px 40px;
+  width: 200%;
+  height: 200%;
+  animation: starsShimmer 120s linear infinite;
+}
+
+.theme-fajr .theme-decoration::after {
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 0%, #4a8fe7 0%, transparent 60%);
+  width: 100%;
+  height: 40%;
+  bottom: 80%;
+  left: 0;
+  animation: fajrGlow 20s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+/* Sunrise - Early Morning (no sun) */
+.theme-sunrise .theme-decoration::before {
+  width: 150%;
+  height: 150%;
+  top: -30%;
+  left: -25%;
+  background: linear-gradient(135deg, rgba(173, 216, 230, 0.5) 0%, transparent 60%);
+  animation: morningMist 15s ease-in-out infinite;
+  filter: blur(15px);
+}
+
+.theme-sunrise .theme-decoration::after {
+  width: 140%;
+  height: 40%;
+  bottom: 0;
+  left: -20%;
+  background: linear-gradient(0deg, rgba(255, 180, 180, 0.2) 0%, rgba(173, 216, 230, 0.1) 60%, transparent 100%);
+  animation: horizonGlow 20s ease-in-out infinite;
+  filter: blur(12px);
+}
+
+/* Dhuhr - Noon (no sun) */
+.theme-dhuhr .theme-decoration::before {
+  width: 120%;
+  height: 120%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, rgba(150, 200, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+  animation: cloudsDrift 30s ease-in-out infinite;
+  filter: blur(15px);
+}
+
+.theme-dhuhr .theme-decoration::after {
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(150, 200, 255, 0.15) 50%, transparent 100%);
+  animation: skyGlow 20s ease-in-out infinite;
+  opacity: 0.6;
+  filter: blur(12px);
+}
+
+/* Asr - Afternoon (no sun) */
+.theme-asr .theme-decoration::before {
+  width: 120%;
+  height: 120%;
+  background: linear-gradient(180deg, transparent 30%, rgba(150, 180, 210, 0.3) 60%, transparent 100%);
+  animation: afternoonBreeze 20s ease-in-out infinite;
+  filter: blur(12px);
+}
+
+.theme-asr .theme-decoration::after {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, transparent 0%, rgba(200, 210, 225, 0.2) 50%, transparent 100%);
+  animation: asrBreeze 15s ease-in-out infinite;
+  filter: blur(15px);
+}
+
+/* Maghrib - Sunset (no sun) */
+.theme-maghrib .theme-decoration::before {
+  width: 150%;
+  height: 80%;
+  bottom: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(106, 90, 205, 0.5) 0%, transparent 70%);
+  animation: eveningGlow 15s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+.theme-maghrib .theme-decoration::after {
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(106, 31, 120, 0.4) 0%, transparent 100%);
+  filter: blur(10px);
+}
+
+/* Isha - Night */
+.theme-isha .theme-decoration::before {
+  width: 200%;
+  height: 200%;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 20% 60%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 80% 90%, rgba(255, 255, 255, 0.8) 1px, transparent 1px);
+  background-size: 200px 200px;
+  animation: starsShimmer 180s linear infinite;
+  opacity: 0.7;
+}
+
+.theme-isha .theme-decoration::after {
+  width: 60%;
+  height: 60%;
+  top: 10%;
+  right: 10%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(20, 30, 60, 0.3) 0%, transparent 70%);
+  animation: nightGlow 15s ease-in-out infinite;
+  filter: blur(25px);
+}
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+@keyframes starsShimmer {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes fajrGlow {
+  0%, 100% { opacity: 0.3; transform: translateY(0); filter: blur(20px); }
+  50% { opacity: 0.6; transform: translateY(-10%); filter: blur(15px); }
+}
+
+@keyframes morningMist {
+  0%, 100% { opacity: 0.3; transform: translateY(0); filter: blur(15px); }
+  50% { opacity: 0.6; transform: translateY(-5px); filter: blur(20px); }
+}
+
+@keyframes horizonGlow {
+  0%, 100% { opacity: 0.4; transform: translateX(0); }
+  50% { opacity: 0.7; transform: translateX(5%); }
+}
+
+@keyframes cloudsDrift {
+  0% { transform: translateX(-5%) translateY(0); }
+  50% { transform: translateX(5%) translateY(-2%); }
+  100% { transform: translateX(-5%) translateY(0); }
+}
+
+@keyframes dhuhrsweep {
+  0% { transform: translateX(-100%) skewX(-15deg); opacity: 0.3; }
+  50% { transform: translateX(0%) skewX(-15deg); opacity: 0.7; }
+  100% { transform: translateX(100%) skewX(-15deg); opacity: 0.3; }
+}
+
+@keyframes afternoonBreeze {
+  0%, 100% { opacity: 0.4; transform: translateY(0) skewY(1deg); }
+  50% { opacity: 0.7; transform: translateY(-10px) skewY(-1deg); }
+}
+
+@keyframes asrBreeze {
+  0%, 100% { transform: translateX(0) skewX(0deg); }
+  50% { transform: translateX(10px) skewX(-2deg); }
+}
+
+@keyframes eveningGlow {
+  0%, 100% { opacity: 0.5; transform: scale(1); filter: blur(20px); }
+  50% { opacity: 0.7; transform: scale(1.05); filter: blur(18px); }
+}
+
+@keyframes nightGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.1); }
+}
+
+@keyframes digitalPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* ===== COMPONENT STYLES ===== */
+
+/* Hijri Date */
+.hijri-date-container {
+  position: relative;
+}
+
+.hijri-date-container .clock {
+  animation: digitalPulse 2s infinite;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+/* Prayer Cards with consistent size */
+.prayer-card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  min-height: 200px;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.prayer-card + .prayer-card {
+  margin-top: 0;
+}
+
+.prayer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.prayer-card.prayer-card-active {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.04);
+  animation: cardPulse 2.5s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.prayer-card.prayer-card-active:hover {
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Progress Bar */
+.progress-container {
+  position: relative;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  position: relative;
+  height: 100%;
+  border-radius: 9999px;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  will-change: width;
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+/* Theme-specific progress bars */
+.theme-fajr .progress-bar {
+  background: linear-gradient(90deg, var(--theme-fajr-primary), var(--theme-fajr-accent));
+  box-shadow: 0 0 10px var(--theme-fajr-primary);
+}
+
+.theme-sunrise .progress-bar {
+  background: linear-gradient(90deg, var(--theme-sunrise-primary), var(--theme-sunrise-accent));
+  box-shadow: 0 0 10px var(--theme-sunrise-primary);
+}
+
+.theme-dhuhr .progress-bar {
+  background: linear-gradient(90deg, var(--theme-dhuhr-primary), var(--theme-dhuhr-accent));
+  box-shadow: 0 0 10px var(--theme-dhuhr-primary);
+}
+
+.theme-asr .progress-bar {
+  background: linear-gradient(90deg, #e65c00, #f9d423);
+  box-shadow: 0 0 10px rgba(230, 92, 0, 0.7);
+}
+
+.theme-maghrib .progress-bar {
+  background: linear-gradient(90deg, var(--theme-maghrib-primary), var(--theme-maghrib-accent));
+  box-shadow: 0 0 10px var(--theme-maghrib-primary);
+}
+
+.theme-isha .progress-bar {
+  background: linear-gradient(90deg, var(--theme-isha-primary), var(--theme-isha-accent));
+  box-shadow: 0 0 10px var(--theme-isha-primary);
+}
+
+/* ===== GLASS EFFECTS ===== */
+.glass-card {
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 1.5rem;
+  border: 1.5px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);
+  transition: box-shadow 0.4s, border-color 0.4s;
+}
+
+.glass-card:hover {
+  box-shadow: 0 12px 32px 0 rgba(31,38,135,0.16);
+  border-color: rgba(255,255,255,0.24);
+}
+
+.glow {
+  box-shadow: 0 0 16px 4px rgba(255, 255, 200, 0.25), 0 0 0 2px rgba(255,255,255,0.08);
+  filter: drop-shadow(0 0 8px #ffe06688);
+}
+
+.animate-card-entry {
+  animation: card-entry 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes card-entry {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.glow-sm {
+  text-shadow: 0 0 8px rgba(255, 255, 180, 0.4);
+}
+
+/* Extra animations */
+@keyframes cardPulse {
+  0%, 100% { box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.1); }
+  50% { box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15), 0 0 25px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+/* Cloud movement animations */
+@keyframes cloud-slow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100vw + 100%)); }
+}
+
+@keyframes cloud-slower {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100vw + 100%)); }
+}
+
+.animate-cloud-slow {
+  animation: cloud-slow 90s linear infinite;
+}
+
+.animate-cloud-slower {
+  animation: cloud-slower 120s linear infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 10s ease-in-out infinite;
+}
+
+/* Enhanced Animation Effects */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 10s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shimmer effect for progress bars */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Custom transition for theme changes */
+.theme-transition {
+  transition: background 1.5s ease, color 1s ease;
+}
+
+.app-container {
+  position: relative;
+  overflow: hidden;
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Additional animations */
+.animate-glow {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Enhanced sunrise/sunset animations */
+.sun-rays {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 5%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(3px);
+  animation: pulse-slow 4s ease-in-out infinite;
+}
+
+/* Card Entry Animation */
+@keyframes card-entry {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-entry {
+  animation: card-entry 0.5s ease-out forwards;
+  opacity: 0; /* Start hidden */
+}
+
+/* Shooting star animation */
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(200px) translateY(100px);
+    opacity: 0;
+  }
+}
+
+.animate-shooting-star {
+  animation: shooting-star 4s ease-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Starfield animations for maghrib theme */
+@keyframes starfield-slow {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes starfield-medium {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes starfield-fast {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-starfield-slow {
+  animation: starfield-slow 120s linear infinite;
+}
+
+.animate-starfield-medium {
+  animation: starfield-medium 90s linear infinite;
+}
+
+.animate-starfield-fast {
+  animation: starfield-fast 60s linear infinite;
+}
+
+@keyframes skyGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.theme-decoration-dhuhr {
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+}
+
+.theme-decoration-sunrise, 
+.theme-decoration-fajr, 
+.theme-decoration-asr, 
+.theme-decoration-maghrib, 
+.theme-decoration-isha {
+  opacity: 0.9;
+  transition: opacity 0.5s ease;
+}
+
+/* Text glow effects */
+.glow-sm {
+  text-shadow: 0 0 8px rgba(255, 255, 180, 0.4);
+}
+
+.glow-md {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.glow-lg {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+}
+
+/* Custom styling for select dropdowns */
+select option {
+  background-color: #1f2937; /* dark gray background */
+  color: white;
+  padding: 10px;
+}
+
+/* Ensure dropdown options are visible on all browsers */
+select {
+  color-scheme: dark;
+}
+
+/* Progress bar enhancements */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Additional animation for slower pulse */
+@keyframes pulse-slower {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+}
+
+.animate-pulse-slower {
+  animation: pulse-slower 15s ease-in-out infinite;
+}

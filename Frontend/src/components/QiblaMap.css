@@ -1,0 +1,48 @@
+/* Compass marker styling */
+.compass-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.compass-icon {
+  transition: transform 0.3s ease; /* Smooth rotation animation */
+}
+
+/* Kaaba marker styling */
+.kaaba-marker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ensure map container takes full width and height */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Touch-friendly styles for buttons and select */
+.touch-friendly {
+  min-height: 44px; /* Minimum tap target size for mobile */
+  min-width: 44px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Adjust map controls for mobile */
+.leaflet-control {
+  transform: scale(0.8);
+}
+
+@media (max-width: 640px) {
+  .leaflet-control {
+    transform: scale(0.7);
+  }
+
+  /* Slightly smaller compass marker on mobile */
+  .compass-marker svg {
+    transform: scale(0.9);
+  }
+}
